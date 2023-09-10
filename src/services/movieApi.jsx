@@ -17,7 +17,21 @@ export const getTrending = async () => {
 
 export const getMovieByQuery = async query => {
   const { data } = await axios.get(
-    `/search/movie?api_key=${API_KEY}&query=${query}&${LANGUAGE}&page=1`
+    `/search/movie?query=${query}&include_adult=false&language=${LANGUAGE}&api_key=${API_KEY}`
+  );
+  return data;
+};
+
+export const getMovieById = async id => {
+  const { data } = await axios.get(
+    `/movie/${id}?language=${LANGUAGE}&api_key=${API_KEY}`
+  );
+  return data;
+};
+
+export const getMovieCasts = async id => {
+  const { data } = await axios.get(
+    `/movie/${id}/credits?language=${LANGUAGE}&api_key=${API_KEY}`
   );
   return data;
 };
