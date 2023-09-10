@@ -11,7 +11,7 @@ const Movies = () => {
 
   useEffect(() => {
     getMovies(q);
-  }, []);
+  }, [q]);
 
   const handleSubmit = async e => {
     e.preventDefault();
