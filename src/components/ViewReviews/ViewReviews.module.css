@@ -1,0 +1,21 @@
+.wrong_message {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.reviews_list {
+  margin-right: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.reviews_name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.reviews_text {
+  font-size: 14px;
+}

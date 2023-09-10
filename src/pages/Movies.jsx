@@ -2,6 +2,7 @@ import SearchMovies from 'components/SearchMovies/SearchMovies';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from 'services/movieApi';
+import css from './Movies.module.css';
 
 const Movies = () => {
   const [movies, setMovies] = useState(['']);
@@ -37,11 +38,16 @@ const Movies = () => {
   };
 
   return (
-    <div>
-      <h2>Search Movies</h2>
-      <form onClick={handleSubmit}>
-        <input type="text" onChange={handleInputChange} />
-        <button>Search</button>
+    <div className={css.search_wrapper}>
+      <h2 className={css.search_title}>Search Movies</h2>
+      <form onClick={handleSubmit} className={css.search_form}>
+        <input
+          type="text"
+          placeholder="type movie"
+          onChange={handleInputChange}
+          className={css.search_input}
+        />
+        <button className={css.search_btn}>Search</button>
       </form>
       {movies.length > 0 ? (
         <h1>pls, type a request</h1>

@@ -1,0 +1,35 @@
+.search_wrapper {
+  margin: 0 auto;
+}
+
+.search_title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.search_form {
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search_input {
+  padding: 10px 5px;
+  border-top: #fff;
+  border-left: #fff;
+  border-right: #fff;
+}
+
+.search_input::placeholder {
+  color: #000;
+}
+
+.search_btn {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 7px;
+}

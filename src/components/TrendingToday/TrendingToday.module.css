@@ -1,0 +1,39 @@
+.trending_list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.list_item {
+  height: 350px;
+  width: 200px;
+}
+
+.item_link {
+  text-decoration: none;
+}
+
+.trending_img {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.text_wrapper {
+  background-color: #a0b6d9;
+  height: 50px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item_text {
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+}

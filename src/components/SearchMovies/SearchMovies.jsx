@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import css from './SearchMovies.module.css';
 
 const SearchMovies = ({ movies }) => {
-  console.log(movies);
   return (
-    <ul>
+    <ul className={css.movies_list}>
       {movies.map(({ id, title, backdrop_path }) => (
-        <li key={id}>
-          <Link to={`${id}`}>
+        <li key={id} className={css.movies_item}>
+          <Link to={`${id}`} className={css.movie_link}>
             <img
               src={
                 backdrop_path === null
@@ -14,8 +15,11 @@ const SearchMovies = ({ movies }) => {
                   : `http://image.tmdb.org/t/p/w300${backdrop_path}`
               }
               alt={title}
+              className={css.movie_img}
             />
-            <p>{title}</p>
+            <div className={css.movie_text_wrapper}>
+              <p className={css.movie_title}>{title}</p>
+            </div>
           </Link>
         </li>
       ))}
@@ -24,3 +28,13 @@ const SearchMovies = ({ movies }) => {
 };
 
 export default SearchMovies;
+
+SearchMovies.propType = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      backdrop_path: PropTypes.string.isRequired,
+    })
+  ),
+};
