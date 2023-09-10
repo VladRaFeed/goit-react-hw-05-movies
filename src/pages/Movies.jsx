@@ -1,5 +1,5 @@
 import SearchMovies from 'components/SearchMovies/SearchMovies';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from 'services/movieApi';
 import css from './Movies.module.css';
@@ -14,15 +14,6 @@ const Movies = () => {
     e.preventDefault();
     try {
       const result = await getMovieByQuery(q);
-      setMovies(result);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getMovies = async query => {
-    try {
-      const result = await getMovieByQuery(query);
       setMovies(result);
     } catch (error) {
       console.log(error);
