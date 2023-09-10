@@ -10,10 +10,6 @@ const Movies = () => {
 
   const q = searchParams.get('query') ?? '';
 
-  useEffect(() => {
-    getMovies(q);
-  }, [q]);
-
   const handleSubmit = async e => {
     e.preventDefault();
     try {
@@ -50,7 +46,7 @@ const Movies = () => {
         <button className={css.search_btn}>Search</button>
       </form>
       {movies.length > 0 ? (
-        <h1>pls, type a request</h1>
+        <p className={css.wrong_msg}>pls, type a request</p>
       ) : (
         <SearchMovies movies={movies.results} />
       )}
