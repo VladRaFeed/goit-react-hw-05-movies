@@ -1,7 +1,7 @@
 import Home from 'pages/Home';
 import MovieDetails from 'pages/MovieDetails';
 import Movies from 'pages/Movies';
-import { NavLink, Route, Router, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import ViewCast from './ViewCast/ViewCast';
 
 export const App = () => {

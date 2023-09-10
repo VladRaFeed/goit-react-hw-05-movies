@@ -4,11 +4,11 @@ import { getTrending } from 'services/movieApi';
 
 const Home = () => {
   const [data, setData] = useState(['']);
-  const [loader, setLoader] = useState(false);
+  // const [loader, setLoader] = useState(false);
   useEffect(() => {
     const trendingMovies = async () => {
       try {
-        setLoader(true);
+        // setLoader(true);
         const result = await getTrending();
         setData(result);
       } catch (error) {
