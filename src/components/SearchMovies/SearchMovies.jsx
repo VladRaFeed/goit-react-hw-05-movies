@@ -1,13 +1,18 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import css from './SearchMovies.module.css';
 
 const SearchMovies = ({ movies }) => {
+  const location = useLocation();
   return (
     <ul className={css.movies_list}>
       {movies.map(({ id, title, backdrop_path }) => (
         <li key={id} className={css.movies_item}>
-          <Link to={`${id}`} className={css.movie_link}>
+          <Link
+            to={`${id}`}
+            state={{ from: location }}
+            className={css.movie_link}
+          >
             <img
               src={
                 backdrop_path === null

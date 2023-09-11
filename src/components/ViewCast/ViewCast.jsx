@@ -23,22 +23,28 @@ const ViewCast = () => {
   // http://image.tmdb.org/t/p/w200${profile_path}
   return (
     <div>
-      <ul className={css.cast_list}>
-        {cast.map(({ name, character, profile_path, id }) => (
-          <li key={id} className={css.cast_item}>
-            <img
-              src={
-                profile_path === null
-                  ? 'https://i.pinimg.com/564x/3a/67/19/3a67194f5897030237d83289372cf684.jpg'
-                  : `http://image.tmdb.org/t/p/w200${profile_path}`
-              }
-              alt={name}
-            />
-            <h4>{name}</h4>
-            <p>{character}</p>
-          </li>
-        ))}
-      </ul>
+      {cast.length === 0 ? (
+        <h1 className={css.wrong_message}>
+          We dont have any casts for this movie
+        </h1>
+      ) : (
+        <ul className={css.cast_list}>
+          {cast.map(({ name, character, profile_path, id }) => (
+            <li key={id} className={css.cast_item}>
+              <img
+                src={
+                  profile_path === null
+                    ? 'https://i.pinimg.com/564x/3a/67/19/3a67194f5897030237d83289372cf684.jpg'
+                    : `http://image.tmdb.org/t/p/w200${profile_path}`
+                }
+                alt={name}
+              />
+              <h4>{name}</h4>
+              <p>{character}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
