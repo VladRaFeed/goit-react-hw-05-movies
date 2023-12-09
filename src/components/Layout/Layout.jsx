@@ -7,6 +7,11 @@ const Layout = () => {
       <nav className={css.nav_bar}>
         <ul className={css.nav_list}>
           <li>
+            <NavLink to="/news" className={css.nav_link}>
+              News
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/" className={css.nav_link}>
               Home
             </NavLink>
